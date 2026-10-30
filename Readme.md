@@ -362,31 +362,3 @@ You can inspect the data with [MongoDB Compass](https://www.mongodb.com/products
 ```
 mongodb://admin:password123@localhost:27017/?authSource=admin
 ```
-
-## Useful Docker Commands
-
-```bash
-docker compose up --build        # build and start (foreground)
-docker compose up -d --build     # build and start (background)
-docker compose logs -f api       # follow API logs
-docker compose down              # stop and remove containers (data is kept)
-docker compose down -v           # stop and also delete the MongoDB data volume
-```
-
-## Troubleshooting
-
-| Problem | Solution |
-|---|---|
-| `port is already allocated` on 5000 or 27017 | Another app uses that port. Stop it, or change the left side of the mapping in `docker-compose.yml` (e.g. `"5001:8080"`). |
-| Swagger page shows 404 | Make sure `ASPNETCORE_ENVIRONMENT=Development` is set in `docker-compose.yml`. |
-| Search returns an empty list | The database is empty. Call `POST /api/users/import` first. |
-| `400 Bad Request` on search | A parameter is invalid (for example `limit` above 100 or a non-numeric `cursor`). |
-| API cannot connect to MongoDB | Check `docker compose logs mongodb`. In Docker the host must be `mongodb`, not `localhost`. |
-| Import fails with an HTTP error | The container needs internet access to reach `dummyjson.com`. |
-| Want a clean database | Run `docker compose down -v` and start again. |
-
----
-
-## License
-
-Add your license here (for example, MIT).
