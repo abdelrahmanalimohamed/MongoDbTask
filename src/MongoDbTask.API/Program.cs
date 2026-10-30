@@ -5,7 +5,6 @@ using MongoDbTask.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddControllers();
 
 builder.Services.AddSwaggerGen();
@@ -27,6 +26,7 @@ builder.Services.AddHttpClient<DummyJsonClient>((serviceProvider, client) =>
 });
 
 builder.Services.AddScoped<UserImportService>();
+builder.Services.AddScoped<UserSearchService>();
 
 var app = builder.Build();
 
