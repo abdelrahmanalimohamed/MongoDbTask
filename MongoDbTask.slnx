@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MongoDbTask.API/MongoDbTask.API.csproj" Id="af7890f8-7698-440f-bdee-67365bad327d" />
+  </Folder>
+</Solution>
