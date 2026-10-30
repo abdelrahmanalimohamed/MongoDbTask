@@ -7,7 +7,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password123
     ports:
-      - "27017:27017"   # optional: lets you connect with Compass from your host
+      - "27017:27017"
     volumes:
       - mongo-data:/data/db
     healthcheck:
@@ -30,11 +30,8 @@ services:
     ports:
       - "5000:8080"     # http://localhost:5000/swagger
     environment:
-      # Development so Swagger is enabled (your Program.cs only enables it in Development)
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
-      # Overrides appsettings.json ("__" maps to ":" in config keys).
-      # Note the host is "mongodb" (the service name), not "localhost".
       MongoDb__ConnectionString: "mongodb://admin:password123@mongodb:27017/?authSource=admin"
       MongoDb__DatabaseName: "MongoLearningDb"
       MongoDb__UsersCollectionName: "users"
