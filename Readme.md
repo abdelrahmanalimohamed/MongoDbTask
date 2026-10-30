@@ -17,9 +17,7 @@ The whole stack (API + MongoDB) runs with a single Docker command, so anyone who
 - [Cursor Pagination in Action](#cursor-pagination-in-action)
 - [Why Cursor Pagination?](#why-cursor-pagination)
 - [Configuration](#configuration)
-- [Running Without Docker](#running-without-docker)
-- [Useful Docker Commands](#useful-docker-commands)
-- [Troubleshooting](#troubleshooting)
+- [Running Without Docker](#running-without-docker)=
 
 ---
 
